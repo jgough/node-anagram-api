@@ -1,2 +1,2 @@
-# node-anagram-api
+# node-api-test
 Test repo for a basic Node API
