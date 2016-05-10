@@ -1,0 +1,13 @@
+{
+  "name" : "node-api-test",
+  "version" : "0.0.1",
+  "scripts": {
+    "start": "node /src/app/bin/www/app.js"
+  },
+  "dependencies": {
+    "unzip2": "0.2.x",
+    "csvtojson": "0.5.x",
+    "mongodb": "2.1.x",
+    "object-sizeof": "latest"
+  }
+}

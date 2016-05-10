@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    build: .
+    build: ./containers/node/
     container_name: node
     command: npm start
     ports:
@@ -10,11 +10,19 @@ services:
      - NODE_ENV=development
     volumes:
      - ./app:/src/app
+     - ./downloads:/data/downloads
     depends_on:
-     - db
-  db:
+     - mongo
+  rockmongo:
+    image: javierjeronimo/rockmongo
+    container_name: rockmongo
+    ports:
+     - 8080:80
+    depends_on:
+     - mongo
+  mongo:
     image: mongo:3.2
-    container_name: mongodb
+    container_name: mongo
     restart: always
     ports:
      - "27017:27017"
