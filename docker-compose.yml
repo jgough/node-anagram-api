@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    build: ./containers/node/
+    build: .
     container_name: node
     command: npm start
     ports:
@@ -9,7 +9,8 @@ services:
     environment:
      - NODE_ENV=development
     volumes:
-     - ./app:/src/app
+     - ./src:/src
+     - ./dist:/dist
      - ./downloads:/data/downloads
     depends_on:
      - mongo
