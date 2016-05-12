@@ -59,7 +59,7 @@ var insertDocuments = function(postcodeCollection, callback) {
   });
 
   // Read in the zip file and pipe directly to the CSV converter
-  fs.createReadStream('/data/downloads/ONSPD_FEB_2016_csv.zip')
+  fs.createReadStream('/app/downloads/ONSPD_FEB_2016_csv.zip')
     .pipe(unzip.Parse())
     .on('entry', function (entry) {
       var fileName = entry.path;

@@ -1,11 +1,17 @@
 //Lets require/import the HTTP module
 var http = require('http');
+var StatsD = require('node-statsd');
+
+var StatsDClient = new StatsD({
+  host:'graphite'
+});
 
 //Lets define a port we want to listen to
 const PORT = 3000;
 
 //We need a function which handles requests and send response
 function handleRequest(request, response){
+  StatsDClient.increment('my_counter');
   response.end('It Works!! Path Hit: ' + request.url);
 }
 

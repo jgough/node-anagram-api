@@ -2,11 +2,12 @@
   "name": "node-api-test",
   "version": "0.0.2",
   "scripts": {
-    "start": "gulp --gulpfile /src/gulpfile.js"
+    "start": "gulp --gulpfile /app/gulpfile.js"
   },
   "dependencies": {
     "csvtojson": "0.5.x",
     "mongodb": "2.1.x",
+    "node-statsd": "^0.1.1",
     "unzip2": "0.2.x"
   },
   "devDependencies": {

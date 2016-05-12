@@ -5,13 +5,13 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN add-apt-repository ppa:chris-lea/node.js && apt-get update && apt-get -y upgrade
 RUN apt-get install -y nodejs
 
-RUN mkdir /src
+RUN mkdir /app
 
 RUN npm install -g gulp
 
-WORKDIR /src
-ADD src/package.json /src/package.json
-ADD src/gulpfile.js /src/gulpfile.js
+WORKDIR /app
+ADD package.json package.json
+ADD gulpfile.js gulpfile.js
 RUN npm install
 
 EXPOSE 3000

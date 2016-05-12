@@ -3,8 +3,8 @@ const nodemon = require('gulp-nodemon');
 const babel = require('gulp-babel');
 
 var paths = {
-  src: ['/src/*.js'],
-  dist: '/dist',
+  src: ['/app/src/*.js'],
+  dist: '/app/dist',
 };
 
 gulp.task('start', function () {
@@ -21,4 +21,4 @@ gulp.task('babel', function() {
 
 gulp.watch(paths.src, ['babel']);
 
-gulp.task('default', ['start']);
+gulp.task('default', ['babel','start']);
