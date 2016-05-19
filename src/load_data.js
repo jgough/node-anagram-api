@@ -2,7 +2,6 @@ var unzip = require("unzip2");
 var Converter = require("csvtojson").Converter;
 var fs = require("fs");
 var MongoClient = require("mongodb").MongoClient;
-var heapdump = require('heapdump');
 
 var url = 'mongodb://mongo:27017/local';
 MongoClient.connect(url, function(err, db) {

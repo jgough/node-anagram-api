@@ -16,7 +16,11 @@ gulp.task('babel', function() {
     .pipe(babel({
       presets: ['es2015']
     }))
-    .pipe(gulp.dest(paths.dist));
+    .on('error', function(err) {
+      console.log('>>> ERROR', err);
+      this.emit('end');
+    })
+    .pipe(gulp.dest(paths.dist))
 });
 
 gulp.watch(paths.src, ['babel']);
